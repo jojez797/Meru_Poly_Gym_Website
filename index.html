@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meru Poly Gym - Your Fitness Journey Starts Here</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Meru Poly Gym</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#hours">Hours</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Body, Transform Your Life</h1>
+            <p>Join Meru Poly Gym and start your fitness journey today</p>
+            <a href="#membership" class="btn btn-primary">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2>Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">💪</div>
+                    <h3>Weight Training</h3>
+                    <p>Complete range of dumbbells, barbells, and machines for strength training</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🏃</div>
+                    <h3>Cardio Equipment</h3>
+                    <p>Treadmills, ellipticals, stationary bikes, and rowing machines</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🧘</div>
+                    <h3>Yoga & Stretching</h3>
+                    <p>Dedicated spaces for yoga, pilates, and flexibility training</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🏊</div>
+                    <h3>Swimming Pool</h3>
+                    <p>Olympic-size pool for swimming and water aerobics</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">👥</div>
+                    <h3>Group Classes</h3>
+                    <p>Zumba, CrossFit, HIIT, and other exciting group fitness classes</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🧖</div>
+                    <h3>Locker Rooms & Showers</h3>
+                    <p>Clean, modern facilities with lockers and premium shower amenities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section id="hours" class="hours">
+        <div class="container">
+            <h2>Operating Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <h3>Weekdays (Mon-Fri)</h3>
+                    <p>6:00 AM - 10:00 PM</p>
+                </div>
+                <div class="hours-card">
+                    <h3>Saturdays</h3>
+                    <p>7:00 AM - 8:00 PM</p>
+                </div>
+                <div class="hours-card">
+                    <h3>Sundays</h3>
+                    <p>8:00 AM - 6:00 PM</p>
+                </div>
+                <div class="hours-card">
+                    <h3>Holidays</h3>
+                    <p>Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="membership">
+        <div class="container">
+            <h2>Membership Plans</h2>
+            <div class="membership-grid">
+                <div class="membership-card">
+                    <h3>Basic</h3>
+                    <p class="price">$29.99<span>/month</span></p>
+                    <ul class="features">
+                        <li>✓ Gym access</li>
+                        <li>✓ All equipment</li>
+                        <li>✗ Group classes</li>
+                        <li>✗ Personal trainer</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="selectMembership('Basic', 29.99)">Select Plan</button>
+                </div>
+                <div class="membership-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Premium</h3>
+                    <p class="price">$49.99<span>/month</span></p>
+                    <ul class="features">
+                        <li>✓ Gym access</li>
+                        <li>✓ All equipment</li>
+                        <li>✓ Group classes</li>
+                        <li>✗ Personal trainer</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectMembership('Premium', 49.99)">Select Plan</button>
+                </div>
+                <div class="membership-card">
+                    <h3>Elite</h3>
+                    <p class="price">$99.99<span>/month</span></p>
+                    <ul class="features">
+                        <li>✓ Gym access</li>
+                        <li>✓ All equipment</li>
+                        <li>✓ Group classes</li>
+                        <li>✓ Personal trainer</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="selectMembership('Elite', 99.99)">Select Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Join Meru Poly Gym Today</h2>
+            <form id="registrationForm" onsubmit="submitRegistration(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="membership">Selected Membership Plan *</label>
+                    <input type="text" id="membership" name="membership" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fitnessGoal">Fitness Goal</label>
+                    <textarea id="fitnessGoal" name="fitnessGoal" rows="3" placeholder="Tell us about your fitness goals..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method *</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="credit_card">Credit Card</option>
+                        <option value="debit_card">Debit Card</option>
+                        <option value="bank_transfer">Bank Transfer</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions *</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Complete Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>📍 Location</h3>
+                    <p>123 Fitness Street<br>Meru City, MC 12345</p>
+                </div>
+                <div class="contact-info">
+                    <h3>📞 Phone</h3>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="contact-info">
+                    <h3>📧 Email</h3>
+                    <p>info@merupolygym.com</p>
+                </div>
+                <div class="contact-info">
+                    <h3>🌐 Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Meru Poly Gym. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
